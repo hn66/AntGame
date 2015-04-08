@@ -1,0 +1,266 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+
+package antgame;
+
+import org.junit.After;
+import org.junit.AfterClass;
+import org.junit.Before;
+import org.junit.BeforeClass;
+import org.junit.Test;
+import static org.junit.Assert.*;
+
+/**
+ *
+ * @author Chris
+ */
+public class AntTest {
+    
+    public AntTest() {
+    }
+    
+    @BeforeClass
+    public static void setUpClass() {
+    }
+    
+    @AfterClass
+    public static void tearDownClass() {
+    }
+    
+    @Before
+    public void setUp() {
+    }
+    
+    @After
+    public void tearDown() {
+    }
+
+    /**
+     * Test of state method, of class Ant.
+     */
+    @Test
+    public void testState() {
+        System.out.println("state");
+        Ant a = new Ant(null, new Cell(0, 9), null);
+        Ant instance = new Ant(null, new Cell(3, 7), null);
+        int expResult = 0;
+        int result = instance.state(a);
+        assertEquals(expResult, result);
+        instance.set_state(a, 6);
+        expResult = 6;
+        result = instance.state(a);
+        assertEquals(expResult, result);
+        //maybe shpuld not have Ant a as the argument of the method
+        //it should take nothing instead
+    }
+
+    /**
+     * Test of color method, of class Ant.
+     */
+    @Test
+    public void testColor() {
+        System.out.println("color");
+        Ant a = new Ant(null, new Cell(0, 9), Color.valueOf("RED"));
+        Ant instance = new Ant(null, new Cell(3, 7), Color.valueOf("BLACK"));
+        Color expResult = Color.valueOf("BLACK");
+        Color result = instance.color(a);
+        assertEquals(expResult, result);
+    }
+
+    /**
+     * Test of resting method, of class Ant.
+     */
+    @Test
+    public void testResting() {
+        System.out.println("resting");
+        Ant a = new Ant(null, new Cell(0, 9), Color.valueOf("RED"));
+        Ant instance = new Ant(null, new Cell(3, 7), Color.valueOf("BLACK"));
+        int expResult = 0;
+        int result = instance.resting(a);
+        assertEquals(expResult, result);
+        expResult = 10;
+        instance.set_resting(a, 10);
+        result = instance.resting(a);
+        assertEquals(expResult, result);
+    }
+
+    /**
+     * Test of direction method, of class Ant.
+     */
+    @Test
+    public void testDirection() {
+        System.out.println("direction");
+        Ant a = new Ant(null, new Cell(0, 9), Color.valueOf("RED"));
+        Ant instance = new Ant(null, new Cell(3, 7), Color.valueOf("BLACK"));
+        int expResult = 0;
+        int result = instance.direction(a);
+        assertEquals(expResult, result);
+        expResult = 5;
+        instance.set_direction(a, 5);
+        result = instance.direction(a);
+        assertEquals(expResult, result);
+    }
+
+    /**
+     * Test of has_food method, of class Ant.
+     */
+    @Test
+    public void testHas_food() {
+        System.out.println("has_food");
+        Ant a = new Ant(null, new Cell(0, 9), Color.valueOf("RED"));
+        Ant instance = new Ant(null, new Cell(3, 7), Color.valueOf("BLACK"));
+        boolean expResult = false;
+        boolean result = instance.has_food(a);
+        assertEquals(expResult, result);
+        expResult = true;
+        instance.set_has_food(a, true);
+        result = instance.has_food(a);
+        assertEquals(expResult, result);
+    }
+
+    /**
+     * Test of set_state method, of class Ant.
+     */
+    @Test
+    public void testSet_state() {
+        System.out.println("set_state");
+        Ant a = new Ant(null, new Cell(0, 9), Color.valueOf("RED"));
+        Ant instance = new Ant(null, new Cell(3, 7), Color.valueOf("BLACK"));
+        int s = 5;
+        instance.set_state(a, s);
+    }
+
+    /**
+     * Test of set_resting method, of class Ant.
+     */
+    @Test
+    public void testSet_resting() {
+        System.out.println("set_resting");
+        Ant a = new Ant(null, new Cell(0, 9), Color.valueOf("RED"));
+        Ant instance = new Ant(null, new Cell(3, 7), Color.valueOf("BLACK"));
+        int r = 5;
+        instance.set_resting(a, r);
+    }
+
+    /**
+     * Test of set_direction method, of class Ant.
+     */
+    @Test
+    public void testSet_direction() {
+        System.out.println("set_direction");
+        Ant a = new Ant(null, new Cell(0, 9), Color.valueOf("RED"));
+        Ant instance = new Ant(null, new Cell(3, 7), Color.valueOf("BLACK"));
+        int d = 5;
+        instance.set_direction(a, d);
+    }
+
+    /**
+     * Test of set_has_food method, of class Ant.
+     */
+    @Test
+    public void testSet_has_food() {
+        System.out.println("set_has_food");
+        Ant a = new Ant(null, new Cell(0, 9), Color.valueOf("RED"));
+        Ant instance = new Ant(null, new Cell(3, 7), Color.valueOf("BLACK"));
+        boolean b = true;
+        instance.set_has_food(a, b);
+    }
+
+    /**
+     * Test of adjacent_ants method, of class Ant.
+     */
+    @Test
+    public void testAdjacent_ants() {
+        System.out.println("adjacent_ants");
+        Cell p = new Cell(0, 1);
+        Color c = Color.valueOf("RED");
+        Ant instance = new Ant(null, new Cell(0, 0), c);
+        int expResult = 1;
+        int result = instance.adjacent_ants(p, c);
+        assertEquals(expResult, result);
+    }
+
+    /**
+     * Test of check_for_surrounded_ant_at method, of class Ant.
+     */
+    @Test
+    public void testCheck_for_surrounded_ant_at() {
+        System.out.println("check_for_surrounded_ant_at");
+        Cell p = new Cell(0, 1);
+        Ant instance = new Ant(null, new Cell(3, 7), Color.valueOf("BLACK"));
+        instance.check_for_surrounded_ant_at(p);
+        // TODO review the generated test code and remove the default call to fail.
+        fail("The test case is a prototype.");
+    }
+
+    /**
+     * Test of check_for_surrounded_ants method, of class Ant.
+     */
+    @Test
+    public void testCheck_for_surrounded_ants() {
+        System.out.println("check_for_surrounded_ants");
+        Cell p = null;
+        Ant instance = null;
+        instance.check_for_surrounded_ants(p);
+        // TODO review the generated test code and remove the default call to fail.
+        fail("The test case is a prototype.");
+    }
+
+    /**
+     * Test of getCell method, of class Ant.
+     */
+    @Test
+    public void testGetCell() {
+        System.out.println("getCell");
+        Cell c = new Cell(3, 7);
+        Ant instance = new Ant(null, c, Color.valueOf("BLACK"));
+        Cell expResult = c;
+        Cell result = instance.getCell();
+        assertEquals(expResult, result);
+    }
+
+    /**
+     * Test of getId method, of class Ant.
+     */
+    @Test
+    public void testGetId() {
+        System.out.println("getId");
+        Ant instance = null;
+        int expResult = 0;
+        int result = instance.getId();
+        assertEquals(expResult, result);
+        // TODO review the generated test code and remove the default call to fail.
+        fail("The test case is a prototype.");
+    }
+
+    /**
+     * Test of getDirection method, of class Ant.
+     */
+    @Test
+    public void testGetDirection() {
+        System.out.println("getDirection");
+        Ant instance = new Ant(null, new Cell(3, 7), Color.valueOf("BLACK"));
+        int expResult = 0;
+        int result = instance.getDirection();
+        assertEquals(expResult, result);
+        expResult = 2;
+        instance.set_direction(instance, 2);
+        result = instance.getDirection();
+        assertEquals(expResult, result);
+    }
+
+    /**
+     * Test of setColor method, of class Ant.
+     */
+    @Test
+    public void testSetColor() {
+        System.out.println("setColor");
+        Color color = Color.valueOf("BLACK");
+        Ant instance = new Ant(null, new Cell(3, 7), color);
+        instance.setColor(color);
+    }
+    
+}
