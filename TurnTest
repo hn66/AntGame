@@ -1,0 +1,90 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+
+package antgame;
+
+import antgame.Turn.Left_Right;
+import org.junit.After;
+import org.junit.AfterClass;
+import org.junit.Before;
+import org.junit.BeforeClass;
+import org.junit.Test;
+import static org.junit.Assert.*;
+
+/**
+ *
+ * @author Chris
+ */
+public class TurnTest {
+    
+    public TurnTest() {
+    }
+    
+    @BeforeClass
+    public static void setUpClass() {
+    }
+    
+    @AfterClass
+    public static void tearDownClass() {
+    }
+    
+    @Before
+    public void setUp() {
+    }
+    
+    @After
+    public void tearDown() {
+    }
+
+    /**
+     * Test of getLr method, of class Turn.
+     */
+    @Test
+    public void testGetLr() {
+        System.out.println("getLr");
+        Turn instance = new Turn(Left_Right.valueOf("LEFT"), 6);
+        Turn.Left_Right expResult = Left_Right.valueOf("LEFT");
+        Turn.Left_Right result = instance.getLr();
+        assertEquals(expResult, result);
+    }
+
+    /**
+     * Test of getSt method, of class Turn.
+     */
+    @Test
+    public void testGetSt() {
+        System.out.println("getSt");
+        Turn instance = new Turn(Left_Right.valueOf("LEFT"), 6);
+        int expResult = 6;
+        int result = instance.getSt();
+        assertEquals(expResult, result);
+    }
+
+    /**
+     * Test of setLeft_or_right method, of class Turn.
+     */
+    @Test
+    public void testSetLeft_or_right() {
+        System.out.println("setLeft_or_right");
+        Turn.Left_Right left_or_right = Left_Right.valueOf("RIGHT");
+        Turn instance = new Turn(Left_Right.valueOf("LEFT"), 6);
+        instance.setLeft_or_right(left_or_right);
+        assertEquals(instance.getLr(), Left_Right.valueOf("RIGHT"));
+    }
+
+    /**
+     * Test of toString method, of class Turn.
+     */
+    @Test
+    public void testToString() {
+        System.out.println("toString");
+        Turn instance = new Turn(Left_Right.valueOf("LEFT"), 6);
+        String expResult = "Turn";
+        String result = instance.toString();
+        assertEquals(expResult, result);
+    }
+    
+}
