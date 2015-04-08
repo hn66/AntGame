@@ -1,0 +1,89 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+
+package antgame;
+
+import org.junit.After;
+import org.junit.AfterClass;
+import org.junit.Before;
+import org.junit.BeforeClass;
+import org.junit.Test;
+import static org.junit.Assert.*;
+
+/**
+ *
+ * @author Chris
+ */
+public class FlipTest {
+    
+    public FlipTest() {
+    }
+    
+    @BeforeClass
+    public static void setUpClass() {
+    }
+    
+    @AfterClass
+    public static void tearDownClass() {
+    }
+    
+    @Before
+    public void setUp() {
+    }
+    
+    @After
+    public void tearDown() {
+    }
+
+    /**
+     * Test of getP method, of class Flip.
+     */
+    @Test
+    public void testGetP() {
+        System.out.println("getP");
+        Flip instance = new Flip(2, 68, 42);
+        int expResult = 2;
+        int result = instance.getP();
+        assertEquals(expResult, result);
+    }
+
+    /**
+     * Test of getSt method, of class Flip.
+     */
+    @Test
+    public void testGetSt() {
+        System.out.println("getSt");
+        Flip instance = new Flip(2, 68, 42);
+        int expResult = 68;
+        int result = instance.getSt();
+        assertEquals(expResult, result);
+    }
+
+    /**
+     * Test of getSt2 method, of class Flip.
+     */
+    @Test
+    public void testGetSt2() {
+        System.out.println("getSt2");
+        Flip instance = new Flip(2, 68, 42);
+        int expResult = 42;
+        int result = instance.getSt2();
+        assertEquals(expResult, result);
+    }
+
+    /**
+     * Test of toString method, of class Flip.
+     */
+    @Test
+    public void testToString() {
+        System.out.println("toString");
+        Flip instance = new Flip(2, 68, 42);
+        String expResult = "Flip";
+        String result = instance.toString();
+        assertEquals(expResult, result);
+    }
+    
+}
